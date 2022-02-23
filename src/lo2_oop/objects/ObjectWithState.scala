@@ -11,4 +11,9 @@ object ObjectWithState {
     this.x *= 2
   }
 
+  def main(args: Array[String]): Unit ={
+    ObjectWithState.doubleX()
+    println(ObjectWithState.x)
+  }
+
 }
