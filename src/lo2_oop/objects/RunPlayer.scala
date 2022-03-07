@@ -18,6 +18,10 @@ object RunPlayer {
         Transporter(0,0,3.0,4.0)
     t1.move(5,6)
     println(t1)
+    var general:GameItem = new HealthPotion(1,2,10)
+    player1.pickUpItem(hp1)
+    player1.pickUpItem(t1)
+    player1.pickUpItem(general)
   }
 
 }

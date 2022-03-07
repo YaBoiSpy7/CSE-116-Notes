@@ -1,6 +1,5 @@
 package lo2_oop.testing
 
-import lo2_oop.objects.Item
 import org.scalatest._
 
 class TestItems extends FunSuite {
