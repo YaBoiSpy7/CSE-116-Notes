@@ -22,6 +22,8 @@ object RunPlayer {
     player1.pickUpItem(hp1)
     player1.pickUpItem(t1)
     player1.pickUpItem(general)
+    var go:GameObject = new HealthPotion(4,5,10)
+    var hp2=hp1
   }
 
 }

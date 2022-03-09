@@ -11,5 +11,10 @@ class HealthPotion (xLoc:Double,yLoc:Double,var increase:Int)
     this.increase*=factor
   }
 
-  
+  override def equals(obj: Any): Boolean = {
+    obj match {
+      case hp: HealthPotion => this.increase == hp.increase
+      case _ => false
+    }
+  }
 }
