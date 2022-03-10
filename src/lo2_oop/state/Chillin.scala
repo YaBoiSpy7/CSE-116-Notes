@@ -3,7 +3,6 @@ package lo2_oop.state
 class Chillin (brain2:Student) extends State(brain2){
   override def study(): Unit={
     println("I'm a good student")
-
     brain2.mentalState = new Calm(brain2)
   }
 
