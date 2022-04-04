@@ -1,6 +1,6 @@
 package lo3_fp
 
-class simpleRecursion {
+object simpleRecursion {
   def computeGeometricSum(n:Int): Int={
     if (n < 1){
       0
@@ -49,9 +49,40 @@ class simpleRecursion {
     }
   }
 
+  def acronymTrail(strings: Array[String], tracker:Int): String={
+    if (tracker == strings.length){
+      ""
+    }
+    else{
+      var out:String = acronymTrail(strings, tracker + 1)
+      out = strings(tracker).slice(0, 1) + out
+      out
+    }
+  }
+
+  def acronym(strings: Array[String]): String={
+    acronymTrail(strings, 0)
+  }
+
+  def acronymTail(strings: Array[String], acc:String, tracker:Int): String={
+    if (tracker == strings.length){ //Stops when you get to the end
+      return acc
+    }
+    else{
+      acronymTail(strings, acc + strings(tracker).slice(0, 1), tracker + 1)
+    }
+  }
+
+  def acronymTailHelper(strings:Array[String]): String={
+    acronymTail(strings, "", 0)
+  }
+
   def main(args: Array[String]): Unit={
     var out = computeGeometricSum(4)
     println(out)
+    var words:Array[String] = Array("Fricked", "Up", "Beyond", "All", "Recognition")
+    var ac = acronym(words)
+    println(ac)
   }
 
 }
