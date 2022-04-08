@@ -18,7 +18,7 @@ class ImmutableCounter(counter:Int) {
 }
 
 object runImmutable{
-  def update(n:Int, counter: ImmutableCounter): ImmutableCounter ={
+  def update(n:Int, counter : ImmutableCounter): ImmutableCounter ={
     if (n == 0){
       counter
     }
