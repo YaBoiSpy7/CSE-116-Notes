@@ -45,7 +45,24 @@ class LinkedListNode[T] (var value:T, var next:LinkedListNode[T]) {
   }
 
   //add/remove elements
+  def insertAfter(element:T): Unit ={
+    this.next = new LinkedListNode[T](element, this.next)
+  }
+  def deleteAfter(): Unit ={
+    this.next = this.next.next
+  }
   //find(element)
+  def find(value:T): LinkedListNode[T] ={
+    if (value == this.value){
+      return this
+    }
+    else if(this.next == null){
+      null
+    }
+    else{
+      this.next.find(value)
+    }
+  }
 
 }
 
