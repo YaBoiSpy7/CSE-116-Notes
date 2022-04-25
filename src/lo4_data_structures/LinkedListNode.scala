@@ -51,6 +51,7 @@ class LinkedListNode[T] (var value:T, var next:LinkedListNode[T]) {
   def deleteAfter(): Unit ={
     this.next = this.next.next
   }
+
   //find(element)
   def find(value:T): LinkedListNode[T] ={
     if (value == this.value){
