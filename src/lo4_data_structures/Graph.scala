@@ -1,6 +1,5 @@
 package lo4_data_structures
 
-
 class Graph [A]{
   var nodes:Map[Int,A]=Map()
   var adjacencyList:Map[Int,List[Int]]=Map()
