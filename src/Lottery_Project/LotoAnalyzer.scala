@@ -49,7 +49,7 @@ object LotoAnalyzer {
 
 
   //DON'T TOUCH, STUPID
-  def megaMillionsAnalyzer(filename: String): Map[Int,Int] = {
+  def twoColumnAnalyzer(filename: String): Map[Int,Int] = {
     val bufferedSource = Source.fromFile(filename)
     var drawingCounter = 0
     var winningNumberList:List[Int] = List()
@@ -68,7 +68,7 @@ object LotoAnalyzer {
   }
 
   //DON'T TOUCH, STUPID
-  def megaballAnalyzer(filename: String): Map[Int,Int] = {
+  def specialBallAnalyzer(filename: String): Map[Int,Int] = {
     val bufferedSource = Source.fromFile(filename)
     var drawingCounter = 0
     var megaballNumberList:List[Int] = List()
@@ -126,18 +126,23 @@ object LotoAnalyzer {
       println(key + " -> " + value)
     }
     */
-    val file = ("data/Lottery_Mega_Millions_Winning_Numbers__Beginning_2002.csv")
-    val megaMillionsStats = megaMillionsAnalyzer(file)
-    val megaballStats = megaballAnalyzer(file)
+    //val megaBallFile = ("data/Lottery_Mega_Millions_Winning_Numbers__Beginning_2002.csv")
+    val cash4LifeFile = ("data/Lottery_Cash_4_Life_Winning_Numbers__Beginning_2014.csv")
+
+    //val megaMillionsStats = twoColumnAnalyzer(megaBallFile)
+    //val megaballStats = specialBallAnalyzer(megaBallFile)
+
+    val cashForLifeStats = twoColumnAnalyzer(cash4LifeFile)
+    val cashBallStats = specialBallAnalyzer(cash4LifeFile)
 
     println("Winning Number Occurances")
-    for ((key, value) <- megaMillionsStats){
+    for ((key, value) <- cashForLifeStats){
       println(key + " -> " + value)
     }
 
 
-    println("Megaball Number Occurances")
-    for ((key, value) <- megaballStats){
+    println("Cashball Number Occurances")
+    for ((key, value) <- cashBallStats){
       println(key + " -> " + value)
     }
 
